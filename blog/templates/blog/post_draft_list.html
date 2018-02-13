@@ -1,0 +1,18 @@
+
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% for post in posts %}
+        <div class="draft-div">
+        	<hr>
+            <h1><a href="{% url 'blog:post_detail' pk=post.pk %}">타이틀: {{ post.title }}</a></h1>
+
+            <hr>
+            <p>{{ post.text|truncatechars:200 }}</p>
+
+            <p>create: {{ post.created_date|date:'y-m-d' }}</p>
+            <hr>
+        </div>
+    {% endfor %}
+
+
+{% endblock %}

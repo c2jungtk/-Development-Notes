@@ -1,0 +1,25 @@
+
+{% extends 'base.html' %}
+{% block blog %}
+<head>
+    <meta charset="UTF-8">
+    <title>태군쨩 블로그</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1><a href="{% url 'blog:post_list' %}">태군쨩 블로그</a></h1>
+            <a href="{% url 'blog:post_list' %}">목록보기</a></h3>
+            <a href="{% url 'blog:post_new' %}">새글쓰기</a></h4>
+            <a href="{% url 'blog:post_draft_list' %}" >초안목록</a></h4>
+        </div>
+    </div>
+ <div class="wrap clearfix">
+{% block content %}
+{% endblock %}
+ </div>
+
+</div>
+</body>
+</html>
+{% endblock %}
